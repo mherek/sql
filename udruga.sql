@@ -21,3 +21,7 @@ alter table pas add foreign key (soba) references soba(id);
 alter table pas add foreign key (djelatnik) references djelatnik(id);
 
 
+insert into djelatnik (id,ime,prezime) values (null,'Ivan','Daric');
+delete from djelatnik where id=1;
+
+
