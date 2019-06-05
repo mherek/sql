@@ -6,15 +6,10 @@ create table radnik (
     ime varchar(50),
     prezime varchar(50),
     oib char(11),
-	iban (21),
-    sef int not null
-	);
-create table sef (
-    id int not null primary key auto_increment,
-    ime varchar(50),
-    prezime varchar(50),
-    oib char(11)   
-);
+	iban char(21),
+	nadredeni int(11) default null,
+	key nadredeni (nadredeni)
+    );
 create table gradiliste (
     id int not null primary key auto_increment,
     ime varchar(50),
@@ -25,7 +20,6 @@ create table dogadaj(
     radnik int not null,
     gradiliste int not null
 );
-alter table radnik add foreign key (sef) references sef(id); 
-alter table gradiliste add foreign key (sef) references sef(id); 
+
 alter table dogadaj add foreign key (gradiliste) references gradiliste(id); 
 alter table dogadaj add foreign key (radnik) references radnik(id); 
