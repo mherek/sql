@@ -12,8 +12,7 @@ create table radnik (
     );
 create table gradiliste (
     id int not null primary key auto_increment,
-    ime varchar(50),
-    sef int not null
+    ime varchar(50)
 );
 create table dogadaj(
     vrijeme datetime,
