@@ -7,9 +7,8 @@ create table radnik (
     prezime varchar(50),
     oib char(11),
 	iban char(21),
-	nadredeni int(11) default null,
-	key nadredeni (nadredeni)
-    );
+	nadredeni int(11) default null
+	);
 create table gradiliste (
     id int not null primary key auto_increment,
     ime varchar(50)
@@ -22,3 +21,4 @@ create table dogadaj(
 
 alter table dogadaj add foreign key (gradiliste) references gradiliste(id); 
 alter table dogadaj add foreign key (radnik) references radnik(id); 
+alter table radnik add foreign key (nadredeni) references radnik(id);
