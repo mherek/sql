@@ -7,14 +7,19 @@ create table radnik (
     prezime varchar(50),
     oib char(11),
 	iban char(21),
-	nadredeni int(11) default null
+	nadredeni int(11) default null,
+	napomena varchar(200)
 	);
 create table gradiliste (
     id int not null primary key auto_increment,
-    ime varchar(50)
+    ime varchar(50),
+	adresa varchar(50)
+	
 );
 create table dogadaj(
-    vrijeme datetime,
+	id int not null primary key auto_increment,
+    vrijemepocetka datetime,
+	vrijemekraja  datetime,
     radnik int not null,
     gradiliste int not null
 );
